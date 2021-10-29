@@ -44,7 +44,8 @@
         android:text="@string/calculer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/purple_700"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

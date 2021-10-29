@@ -3,35 +3,27 @@ package fr.estia.net.batr.h.activities
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
-
+import fr.estia.net.batr.h.activities.databinding.ComputeActivityBinding
 
 
 class ComputeActivity: AppCompatActivity(), TextWatcher{
-    private lateinit var editText1: EditText
-    private lateinit var editText2: EditText
-    private lateinit var textViewResult: TextView
-    private lateinit var buttonCalculate: Button
+    private lateinit var binding: ComputeActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.compute_activity)
-        editText1 = findViewById(R.id.field_1)
-        editText2 = findViewById(R.id.field_2)
-        textViewResult = findViewById(R.id.resultat)
-        buttonCalculate = findViewById(R.id.btn_calculer)
 
-        buttonCalculate.isEnabled = false
-        editText1.addTextChangedListener(this)
-        editText2.addTextChangedListener(this)
+        binding = ComputeActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        buttonCalculate.setOnClickListener {
-            textViewResult.text = (editText1.text.toString().toDouble() + editText2.text.toString().toDouble()).toString()
+        with(binding) {
+            btnCalculer.isEnabled = false
+            field1.addTextChangedListener(this@ComputeActivity)
+            field2.addTextChangedListener(this@ComputeActivity)
 
+            btnCalculer.setOnClickListener {
+                resultat.text = (field1.text.toString().toDouble() + field2.text.toString().toDouble()).toString()
+            }
         }
     }
 
@@ -42,7 +34,10 @@ class ComputeActivity: AppCompatActivity(), TextWatcher{
     }
 
     override fun afterTextChanged(s: Editable) {
-        buttonCalculate.isEnabled = !(editText1.text.isEmpty() || editText2.text.isEmpty())
+        with(binding) {
+            btnCalculer.isEnabled =
+                !(field1.text.isEmpty() || field2.text.isEmpty())
+        }
     }
 
 
