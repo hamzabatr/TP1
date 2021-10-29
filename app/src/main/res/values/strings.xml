@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="text_hello">Bonjour le monde</string>
+    <string name="click_here">cliquez ici</string>
+    <string name="image_description">It\'s your profile picture</string>
+    <string name="you_clicked">Tu as cliqué sur le bouton</string>
+</resources>
