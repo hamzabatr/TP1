@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Neighbors</string>
+    <string name="enregistrer">Save</string>
+    <string name="image">Image</string>
+    <string name="nom">Name</string>
+    <string name="telephone">Phone</string>
+    <string name="website">Website</string>
+    <string name="adresse">Address</string>
+    <string name="propos_moi">About me</string>
+    <string name="photo_de_profil">Profile picture</string>
+    <string name="ajouter_voisin">Add a neighbor</string>
+    <string name="list_voisin">Neighbor\'s list</string>
+    <string name="forme_correcte">Correct forms: 06 XX XX XX XX or 07 XX XX XX XX</string>
+    <string name="site_invalide">This website is not valid</string>
+    <string name="image_invalide">This image is not valid</string>
+    <string name="mail_invalide">This e-mail is not valid</string>
+    <string name="delete_neighbor">You want to delete your neighbor ?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="neighbor_added">A neighbor was added</string>
+</resources>

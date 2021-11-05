@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Voisins</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="image">Image</string>
+    <string name="nom">Nom</string>
+    <string name="telephone">Téléphone</string>
+    <string name="website">Website</string>
+    <string name="adresse">Adresse</string>
+    <string name="propos_moi">A propos de moi</string>
+    <string name="photo_de_profil">Photo de profil</string>
+    <string name="ajouter_voisin">Ajouter un voisin</string>
+    <string name="list_voisin">Liste des voisins</string>
+    <string name="forme_correcte">Formes correctes: 06 XX XX XX XX ou 07 XX XX XX XX</string>
+    <string name="site_invalide">Ce site web n\'est pas valide</string>
+    <string name="image_invalide">Cette image n\'est pas valide</string>
+    <string name="mail_invalide">Cette adresse mail n\'est pas valide</string>
+    <string name="delete_neighbor">Vous voulez supprimer votre voisin ?</string>
+    <string name="yes">Oui</string>
+    <string name="cancel">Annuler</string>
+    <string name="neighbor_added">Un voisin a été ajouté</string>
+</resources>
