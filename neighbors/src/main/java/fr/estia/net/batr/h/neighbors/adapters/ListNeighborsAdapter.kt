@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -24,6 +25,8 @@ class ListNeighborsAdapter(items: List<Neighbor>,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+
         val neighbour: Neighbor = mNeighbours[position]
         // Display Neighbour Name
         holder.mNeighbourName.text = neighbour.name
@@ -40,6 +43,11 @@ class ListNeighborsAdapter(items: List<Neighbor>,
         holder.mDeleteButton.setOnClickListener {
             listNeighborHandler.onDeleteNeighbor(neighbour)
         }
+        holder.mConstraintLayout.setOnClickListener {
+            listNeighborHandler.getString(position.toString())
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -48,12 +56,14 @@ class ListNeighborsAdapter(items: List<Neighbor>,
 
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
+        val mConstraintLayout: ConstraintLayout
         val mNeighbourAvatar: ImageView
         val mNeighbourName: TextView
-        val     mDeleteButton: ImageButton
+        val mDeleteButton: ImageButton
 
         init {
             // Enable click on item
+            mConstraintLayout = view.findViewById(R.id.lonstraint_layout)
             mNeighbourAvatar = view.findViewById(R.id.item_list_avatar)
             mNeighbourName = view.findViewById(R.id.item_list_name)
             mDeleteButton = view.findViewById(R.id.item_list_delete_button)

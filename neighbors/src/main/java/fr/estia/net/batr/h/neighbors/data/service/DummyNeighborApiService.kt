@@ -23,6 +23,10 @@ class DummyNeighborApiService : NeighborApiService {
         TODO("Not yet implemented")
     }
 
+    override fun showNeighbour(position: Int): Neighbor{
+        return DUMMY_NeighborS[position]
+    }
+
 
     private val DUMMY_NeighborS: MutableList<Neighbor> = mutableListOf(
         Neighbor(

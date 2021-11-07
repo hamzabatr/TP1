@@ -13,6 +13,8 @@ class NeighborRepository {
 
     fun getNeighbours(): List<Neighbor> = apiService.neighbours
 
+    fun getNeighbour(position: Int): Neighbor = apiService.showNeighbour(position)
+
     fun removeNeighborFromList(neighbor: Neighbor) = apiService.deleteNeighbour(neighbor)
 
     fun createNeighbor(neighbor: Neighbor) = apiService.createNeighbour(neighbor)

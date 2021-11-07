@@ -32,5 +32,11 @@ interface NeighborApiService {
      * @param neighbor: Neighbor
      */
     fun updateDataNeighbour(neighbor: Neighbor)
+
+    /**
+     * Show an existing Neighbour"
+     * @param pos: Int
+     */
+    fun showNeighbour(pos: Int): Neighbor
 }
 

@@ -1,5 +1,7 @@
 package fr.estia.net.batr.h.neighbors.fragments
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,6 +17,7 @@ import fr.estia.net.batr.h.neighbors.databinding.AddNeighborBinding
 import fr.estia.net.batr.h.neighbors.models.Neighbor
 import android.text.TextUtils
 import android.util.Patterns
+import android.view.inputmethod.InputMethodManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import fr.estia.net.batr.h.neighbors.R
@@ -62,9 +65,15 @@ class AddNeighbourFragment : Fragment(), TextWatcher {
                 context?.getString(R.string.neighbor_added),
                 Toast.LENGTH_LONG
             ).show()
+            binding.root.hideKeyboard()
         }
 
         return binding.root
+    }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
