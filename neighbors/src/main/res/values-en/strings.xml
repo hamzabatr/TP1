@@ -19,4 +19,7 @@
     <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
     <string name="neighbor_added">A neighbor was added</string>
+    <string name="edit_neighbor">Edit neighbor</string>
+    <string name="show_neighbor">Neighbor\'s details</string>
+    <string name="retourner">Return</string>
 </resources>

@@ -30,6 +30,7 @@ class ListNeighborsFragment : Fragment(), ListNeighborHandler {
 
         (activity as? NavigationListener)?.updateTitle(R.string.list_voisin)
 
+
         val view = inflater.inflate(R.layout.list_neighbors_fragment, container, false)
         recyclerView = view.findViewById(R.id.neighbors_list)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -41,7 +42,6 @@ class ListNeighborsFragment : Fragment(), ListNeighborHandler {
         )
 
         addNeighbor = view.findViewById(R.id.add_button)
-
         addNeighbor.setOnClickListener {
             (activity as? NavigationListener)?.showFragment(AddNeighbourFragment())
         }
@@ -82,5 +82,12 @@ class ListNeighborsFragment : Fragment(), ListNeighborHandler {
         val neighbors = NeighborRepository.getInstance().getNeighbours().reversed()
         val adapter = ListNeighborsAdapter(neighbors, this)
         recyclerView.adapter = adapter
+    }
+
+    override fun getString(string: String){
+        activity?.let {
+            (activity as? NavigationListener)?.getString(string)
+        }
+
     }
 }

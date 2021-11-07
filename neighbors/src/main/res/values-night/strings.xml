@@ -19,4 +19,7 @@
     <string name="yes">Oui</string>
     <string name="cancel">Annuler</string>
     <string name="neighbor_added">Un voisin a été ajouté</string>
+    <string name="edit_neighbor">Modifier le voisin</string>
+    <string name="show_neighbor">Détail voisin</string>
+    <string name="retourner">Retourner</string>
 </resources>

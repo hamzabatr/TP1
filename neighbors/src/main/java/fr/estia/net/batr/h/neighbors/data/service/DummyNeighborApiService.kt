@@ -5,14 +5,14 @@ import fr.estia.net.batr.h.neighbors.models.Neighbor
 class DummyNeighborApiService : NeighborApiService {
 
     override val neighbours: List<Neighbor>
-        get() = DUMMY_NeighborS
+        get() = dummyNeighbor
 
     override fun deleteNeighbour(neighbor: Neighbor) {
-        DUMMY_NeighborS.remove(neighbor)
+        dummyNeighbor.remove(neighbor)
     }
 
     override fun createNeighbour(neighbor: Neighbor) {
-        DUMMY_NeighborS.add(neighbor)
+        dummyNeighbor.add(neighbor)
     }
 
     override fun updateFavoriteStatus(neighbor: Neighbor) {
@@ -20,11 +20,14 @@ class DummyNeighborApiService : NeighborApiService {
     }
 
     override fun updateDataNeighbour(neighbor: Neighbor) {
-        TODO("Not yet implemented")
+
     }
 
+    override fun showNeighbour(position: Int): Neighbor{
+        return dummyNeighbor[position]
+    }
 
-    private val DUMMY_NeighborS: MutableList<Neighbor> = mutableListOf(
+    private val dummyNeighbor: MutableList<Neighbor> = mutableListOf(
         Neighbor(
             1, "Caroline",
             "https://i.picsum.photos/id/1011/5472/3648.jpg?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk",
