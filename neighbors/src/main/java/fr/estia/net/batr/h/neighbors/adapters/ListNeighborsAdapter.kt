@@ -45,7 +45,6 @@ class ListNeighborsAdapter(items: List<Neighbor>,
         }
         holder.mConstraintLayout.setOnClickListener {
             listNeighborHandler.getString(position.toString())
-
         }
 
     }
@@ -56,18 +55,12 @@ class ListNeighborsAdapter(items: List<Neighbor>,
 
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
-        val mConstraintLayout: ConstraintLayout
-        val mNeighbourAvatar: ImageView
-        val mNeighbourName: TextView
-        val mDeleteButton: ImageButton
-
-        init {
-            // Enable click on item
-            mConstraintLayout = view.findViewById(R.id.lonstraint_layout)
-            mNeighbourAvatar = view.findViewById(R.id.item_list_avatar)
-            mNeighbourName = view.findViewById(R.id.item_list_name)
-            mDeleteButton = view.findViewById(R.id.item_list_delete_button)
-        }
+        val mConstraintLayout: ConstraintLayout = view.findViewById(R.id.lonstraint_layout)
+        val mNeighbourAvatar: ImageView = view.findViewById(R.id.item_list_avatar)
+        val mNeighbourName: TextView = view.findViewById(R.id.item_list_name)
+        val mDeleteButton: ImageButton = view.findViewById(R.id.item_list_delete_button)
     }
+
+
 
 }

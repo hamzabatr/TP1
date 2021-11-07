@@ -1,6 +1,5 @@
 package fr.estia.net.batr.h.neighbors.fragments
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
@@ -44,34 +43,35 @@ class AddNeighbourFragment : Fragment(), TextWatcher {
             tel.addTextChangedListener(this@AddNeighbourFragment)
             moi.addTextChangedListener(this@AddNeighbourFragment)
             website.addTextChangedListener(this@AddNeighbourFragment)
-        }
 
-        binding.registerButton.setOnClickListener {
 
-            val neighbor = Neighbor(
-                (NeighborRepository.getInstance().getNeighbours().size + 1).toLong(),
-                binding.nom.text.toString(),
-                binding.image.text.toString(),
-                binding.adress.text.toString(),
-                binding.tel.text.toString(),
-                binding.moi.text.toString(),
-                true,
-                binding.website.text.toString()
-            )
-            NeighborRepository.getInstance().createNeighbor(neighbor)
-            (activity as? NavigationListener)?.showFragment(ListNeighborsFragment())
-            Toast.makeText(
-                context,
-                context?.getString(R.string.neighbor_added),
-                Toast.LENGTH_LONG
-            ).show()
-            binding.root.hideKeyboard()
+            registerButton.setOnClickListener {
+                root.hideKeyboard()
+                val neighbor = Neighbor(
+                    (NeighborRepository.getInstance().getNeighbours().size + 1).toLong(),
+                    nom.text.toString(),
+                    image.text.toString(),
+                    adress.text.toString(),
+                    tel.text.toString(),
+                    moi.text.toString(),
+                    true,
+                    website.text.toString()
+                )
+                NeighborRepository.getInstance().createNeighbor(neighbor)
+                (activity as? NavigationListener)?.showFragment(ListNeighborsFragment())
+                Toast.makeText(
+                    context,
+                    context?.getString(R.string.neighbor_added),
+                    Toast.LENGTH_LONG
+                ).show()
+
+            }
         }
 
         return binding.root
     }
 
-    fun View.hideKeyboard() {
+    private fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
     }
@@ -90,7 +90,7 @@ class AddNeighbourFragment : Fragment(), TextWatcher {
                 telLyt.isErrorEnabled = false
             } else {
                 if ((tel.text.toString().startsWith("06") || tel.text.toString()
-                        .startsWith("07")) /*&& tel.text.toString().length >= 2*/ && tel.text.toString().length == 10
+                        .startsWith("07")) && tel.text.toString().length == 10
                 ) {
                     telLyt.isErrorEnabled = false
                 } else {
@@ -148,7 +148,6 @@ class AddNeighbourFragment : Fragment(), TextWatcher {
     }
 
     private fun uploadImageUrlImmediately(urlImage: String) {
-
         Glide.with(binding.img.context)
             .load(urlImage)
             .apply(RequestOptions.circleCropTransform())
@@ -156,7 +155,6 @@ class AddNeighbourFragment : Fragment(), TextWatcher {
             .error(R.drawable.ic_baseline_person_outline_24)
             .skipMemoryCache(false)
             .into(binding.img)
-
     }
 
     private fun isValidEmail(email: String): Boolean {

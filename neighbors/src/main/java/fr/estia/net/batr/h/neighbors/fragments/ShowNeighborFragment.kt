@@ -45,8 +45,8 @@ class ShowNeighborFragment : Fragment(){
             moiValue.text = neighbor.aboutMe
         }
 
-        binding.editButton.setOnClickListener {
-
+        binding.returnButton.setOnClickListener {
+            (activity as? NavigationListener)?.showFragment(ListNeighborsFragment())
         }
 
 

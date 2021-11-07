@@ -37,6 +37,6 @@ interface NeighborApiService {
      * Show an existing Neighbour"
      * @param pos: Int
      */
-    fun showNeighbour(pos: Int): Neighbor
+    fun showNeighbour(position: Int): Neighbor
 }
 

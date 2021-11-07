@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp">
@@ -21,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@id/edit_button"
+        app:layout_constraintBottom_toTopOf="@id/return_button"
         app:layout_constraintHeight_default="wrap"
         app:layout_constraintTop_toBottomOf="@+id/img">
 
@@ -49,7 +50,8 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/nom"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
             <TextView
                 android:id="@+id/tel"
@@ -68,7 +70,8 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/telephone"
-                android:textSize="10sp"/>
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
 
             <TextView
@@ -88,7 +91,8 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/telephone"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
 
             <TextView
@@ -108,7 +112,8 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/telephone"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
 
             <TextView
@@ -128,18 +133,19 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/propos_moi"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
         </LinearLayout>
 
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/edit_button"
+        android:id="@+id/return_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="@string/edit_neighbor"
+        android:text="@string/retourner"
         app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 
